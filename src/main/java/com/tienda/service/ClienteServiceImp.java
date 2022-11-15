@@ -1,7 +1,9 @@
 package com.tienda.service;
 
 import com.tienda.dao.ClienteDao;
+import com.tienda.dao.CreditoDao;
 import com.tienda.domain.Cliente;
+import com.tienda.domain.Credito;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,11 @@ public class ClienteServiceImp implements ClienteService {
     //Si ya esta en memoria se usa ese... sino se crea (patron singleton)
     @Autowired
     private ClienteDao clienteDao;
+    
+    //Se utiliza una anotación  Autowired para que el objeto creditoDao
+    //Si ya esta en memoria se usa ese... sino se crea (patron singleton)
+    @Autowired
+    private CreditoDao creditoDao;
     
     //Retorna la lista de clientes
     @Override
@@ -35,6 +42,11 @@ public class ClienteServiceImp implements ClienteService {
     @Override
     @Transactional
     public void save(Cliente cliente){
+        
+        Credito credito = cliente.getCredito();
+        
+        credito=creditoDao.save(credito);
+        
         clienteDao.save(cliente);
     }
     
