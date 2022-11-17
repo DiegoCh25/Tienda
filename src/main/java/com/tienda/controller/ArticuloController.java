@@ -1,9 +1,7 @@
 
 package com.tienda.controller;
 import com.tienda.domain.Articulo;
-import com.tienda.dao.ArticuloDao;
 import com.tienda.service.ArticuloService;
-import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

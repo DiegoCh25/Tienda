@@ -6,11 +6,14 @@
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
        
     </head>
     <body>
+        <header th:replace="layout/>plantilla :: header"/>
+        <div class="contenido">
         <h1>Datos de Cliente</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/cliente/listado}">Regresar</a>
         <hr/>
         <form th:action="@{/cliente/guardar}" 
             method="post"
@@ -32,10 +35,13 @@
             
              <label for="telefono">Teléfono</label> 
             <input type="text" name="telefono" th:field="*{telefono}"/>
-            <br/>
-            <input type="submit" name="guardar" value="Guardar"/>
-        
+            
+             <label for="limite" >Limite de crédito</label>
+            <input type="number" name="limite" th:field="*{credito.limite}"/>  
+                <hr/>
+            <input type="submit" name="guardar" value="Guardar"/>   
         </form>
+        </div>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>
