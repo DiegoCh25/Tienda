@@ -11,16 +11,19 @@
         
         <header th:fragment="header" class="header"> 
             <nav class="nav">
-                <a th:href=@{/}" class="nav-link logo">TechShop</a>
+                <a th:href=@{/}" class="nav-link logo">[[#{aplicacion.titulo}]]</a>
                 <ul class="nav-menu">
                     <li class="nav-menu-item">
-                        <a class="nav-link nav-menu-link" th:href="@{cliente/listado}">Clientes</a>  
+                        <a class="nav-link nav-menu-link" th:href="@{cliente/listado}">
+                            [[#{plantilla.clientes}]]</a>  
                 </li>
                     <li class="nav-menu-item">
-                        <a class="nav-link nav-menu-link" th:href="@{articulo/listado}">Articulos</a>   
+                        <a class="nav-link nav-menu-link" th:href="@{articulo/listado}">
+                            [[#{plantilla.articulos}]]</a>   
                 </li> 
                     <li class="nav-menu-item">
-                        <a class="nav-link nav-menu-link" th:href="@categoria/listado}">Categorias</a>   
+                        <a class="nav-link nav-menu-link" th:href="@categoria/listado}">
+                            [[#{plantilla.categorias}]]</a>   
                 </li>
                 
                 </ul>  
@@ -29,10 +32,11 @@
         </header>
         
         <footer th:fragment="footer" class="footer">
-            <p>&COPY; Derechos Reservados 2022</p>
+            <p>&COPY; [[#{planilla.derechos}]]
+                <a th:href="@{/(lang=es)}">Es</a>
+                <a th:href="@{/(lang=en)}">EN</a>
+            </p>
         </footer>
-       
-        
-        
+   
     </body>
 </html>

@@ -12,27 +12,28 @@
        
         <div class="contenido">
         
-        <h2>Nuestros articulos</h2>
+        <h2>[[#{articulo.titulo}]]</h2>
         
         <div th:if="${articulos !=null and !articulos.empty}">
         <table border="1">
             <thead>
                 <tr>
-                    <th>Descripción</th>
-                    <th>Precio</th>
+                    <th>[[#articulo.descripción}]]</th>
+                    <th>[[#articulo.precio}]]</th>
+                    <th>[[#articulo.comprar}]]</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="articulo : ${articulos}">
                     <td>[[${articulo.descripcion}]]</td>
                     <td style="text-align: right">[[${#numbers.formatDecimal(articulo.precio,3,2)}]]</td>
-                    <td><a th:href="@{/carrito/agregar/}+ ${articulo.idArticulo}">Comprar</td>
+                    <td><a th:href="@{/carrito/agregar/}+ ${articulo.idArticulo}">[[#articulo.comprar}]]</td>
                 </tr>     
             </tbody>
        </table>
         </div>
         <div th:if"${articulos ==null or articulos.empty}">
-            <h2>No se tienen articulos que mostrar!</h2>
+            <h2>[[#articulo.no_mostrar}]]</h2>
         </div>
         </div>
          <footer th:replace="layout/plantilla :: footer" class="footer"/>
