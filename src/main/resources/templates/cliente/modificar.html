@@ -3,11 +3,10 @@
 <html
     xmlns:th="http://www.thymeleaf.org"
     xmlns:th="http://www.w3.org/1999/xhtml">
-    <head>
+        <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
         <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-       
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>   
     </head>
     <body>
         <header th:replace="layout/>plantilla :: header"/>
