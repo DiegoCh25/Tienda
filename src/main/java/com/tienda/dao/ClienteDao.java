@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface ClienteDao extends JpaRepository<Cliente,Long> {
+    public List<Cliente> findBycorreo(String correo);
+    
     public List<Cliente> findByApellidos(String apellidos);
     
     
